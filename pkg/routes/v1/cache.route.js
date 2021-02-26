@@ -6,5 +6,7 @@ const cacheController = require('../../controllers/cache.controller');
 const router = express.Router();
 
 router.get('/cache/:key', validate(cacheValidation.getCacheByKey), cacheController.getCacheByKey);
+router.put('/cache/:key', cacheController.createUpdateCacheData);
 router.get('/cache', cacheController.findAllKeys);
+
 module.exports = router;

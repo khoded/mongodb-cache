@@ -34,6 +34,22 @@ const createKey = async (keyId, payload) => {
   }
 };
 
+const updateKey = async (keyId, payload) => {
+  try {
+    const key = await Cache.updateOne(
+      { key: keyId },
+      {
+        $set: {
+          data: payload,
+        },
+      }
+    );
+    return key;
+  } catch (error) {
+    return error;
+  }
+};
+
 const allKeys = async () => {
   try {
     const keys = await Cache.find();
@@ -43,8 +59,24 @@ const allKeys = async () => {
   }
 };
 
+const createUpdateCache = async (payload, body) => {
+  try {
+    const cache = await findCacheByKey(payload);
+    let data;
+    if (cache !== null && cache !== undefined) {
+      data = await createKey(payload, body);
+    } else {
+      data = await updateKey(payload, body);
+    }
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+
 module.exports = {
   findCacheByKey,
   createKey,
   allKeys,
+  createUpdateCache,
 };
