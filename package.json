@@ -8,7 +8,8 @@
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check **/*.js",
     "prettier:fix": "prettier --write **/*.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./pkg/index"
   },
   "author": "Onamade Okikioluwa",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "joi": "^17.4.0",
     "mongoose": "^5.11.15",
     "morgan": "^1.10.0",
+    "unique-string": "^2.0.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {
