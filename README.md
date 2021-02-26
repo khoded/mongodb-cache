@@ -6,7 +6,7 @@
 
 - `GET /api/v1/cache/:key`: Get or update the key
 - `PUT /api/v1/cache/:key`: Update the key or Create data
-- `GET /api/keys`: Get all available keys
+- `GET /api/v1/cache`: Get all available keys
 
 ## Setup
 
