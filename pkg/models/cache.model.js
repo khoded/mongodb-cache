@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { convertJSON } = require('../utilities/index');
 
 const cacheSchema = mongoose.Schema(
   {
@@ -15,9 +14,6 @@ const cacheSchema = mongoose.Schema(
     timestamps: true,
   }
 );
-
-// converts mongoose to json
-cacheSchema.plugin(convertJSON);
 
 /**
  * @typedef cache
