@@ -4,11 +4,9 @@
 
 ## API
 
-- `GET /api/v1/cache/:key`: Get or update the key+value
-- `PUT /api/keys/:key`: Update the key+value
-- `DELETE /api/keys/:key`: Delete the key+value
-- `GET /api/keys`: List all available keys
-- `DELETE /api/keys`: Delete all available keys
+- `GET /api/v1/cache/:key`: Get or update the key
+- `PUT /api/v1/cache/:key`: Update the key or Create data
+- `GET /api/keys`: Get all available keys
 
 ## Setup
 
