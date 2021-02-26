@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { convertToJSON } = require('../utilities/convertJSON');
+const { convertJSON } = require('../utilities/index');
 
 const cacheSchema = mongoose.Schema(
   {
@@ -7,7 +7,7 @@ const cacheSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    email: {
+    data: {
       type: String,
     },
   },
@@ -17,7 +17,7 @@ const cacheSchema = mongoose.Schema(
 );
 
 // converts mongoose to json
-cacheSchema.plugin(convertToJSON);
+cacheSchema.plugin(convertJSON);
 
 /**
  * @typedef cache

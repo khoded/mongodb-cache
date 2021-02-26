@@ -3,6 +3,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const httpStatus = require('http-status');
 const config = require('./config/config');
 const morgan = require('./config/morgan');
+const routes = require('./routes/v1');
 const { errorConverter, errorHandler } = require('./middlewares/error');
 const ApiError = require('./utilities/ApiError');
 
@@ -21,6 +22,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // sanitize request data
 app.use(mongoSanitize());
+
+// v1 api routes
+app.use('/v1', routes);
 
 // send back a 404 error for any unknown api request
 app.use((req, res, next) => {
